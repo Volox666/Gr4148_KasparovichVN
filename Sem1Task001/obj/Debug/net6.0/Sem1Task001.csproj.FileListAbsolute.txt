@@ -1,0 +1,15 @@
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\bin\Debug\net6.0\Sem1Task001.exe
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\bin\Debug\net6.0\Sem1Task001.deps.json
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\bin\Debug\net6.0\Sem1Task001.runtimeconfig.json
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\bin\Debug\net6.0\Sem1Task001.dll
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\bin\Debug\net6.0\Sem1Task001.pdb
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\Sem1Task001.csproj.AssemblyReference.cache
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\Sem1Task001.GeneratedMSBuildEditorConfig.editorconfig
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\Sem1Task001.AssemblyInfoInputs.cache
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\Sem1Task001.AssemblyInfo.cs
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\Sem1Task001.csproj.CoreCompileInputs.cache
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\Sem1Task001.dll
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\refint\Sem1Task001.dll
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\Sem1Task001.pdb
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\Sem1Task001.genruntimeconfig.cache
+E:\Программирование\Си шарп\Practic\Gr4148_KasparovichVN\Sem1Task001\obj\Debug\net6.0\ref\Sem1Task001.dll
