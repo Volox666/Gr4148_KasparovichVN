@@ -1,6 +1,6 @@
 ﻿// Считываем данные с консоли
-string numLine1 = Console.ReadLine();
-string numLine2 = Console.ReadLine();
+string? numLine1 = Console.ReadLine();
+string? numLine2 = Console.ReadLine();
 if ((numLine1 != null) && (numLine2 != null))
 {
     //Парсим введенное число
