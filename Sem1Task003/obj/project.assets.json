@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Программирование\\Си шарп\\Practic\\Gr4148_KasparovichVN\\Sem1Task003\\Sem1Task003.csproj",
-      "projectName": "Sem1Task003",
-      "projectPath": "E:\\Программирование\\Си шарп\\Practic\\Gr4148_KasparovichVN\\Sem1Task003\\Sem1Task003.csproj",
+      "projectUniqueName": "E:\\Программирование\\Си шарп\\Practic\\Gr4148_KasparovichVN\\Sem1Task002\\Sem1Task002.csproj",
+      "projectName": "Sem1Task002",
+      "projectPath": "E:\\Программирование\\Си шарп\\Practic\\Gr4148_KasparovichVN\\Sem1Task002\\Sem1Task002.csproj",
       "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-      "outputPath": "E:\\Программирование\\Си шарп\\Practic\\Gr4148_KasparovichVN\\Sem1Task003\\obj\\",
+      "outputPath": "E:\\Программирование\\Си шарп\\Practic\\Gr4148_KasparovichVN\\Sem1Task002\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config"
