@@ -6,9 +6,9 @@
 // деления.
 
 System.Console.WriteLine("Введите первое число");
-int num1 = int.Parse(Console.ReadLine()??"0");  // Работает быстрее
+int num1 = int.Parse(Console.ReadLine()??"0");  // Проверка на не пустой символ и перевод в инт Работает быстрее
 System.Console.WriteLine("Введите второе число");
-int num2 = Convert.ToInt32(Console.ReadLine());
+int num2 = Convert.ToInt32(Console.ReadLine());  // Проверка на не пустой символ и перевод в инт 
 
 bool res = (num1%num2 == 0);
 
