@@ -12,164 +12,80 @@ namespace project
     {
         static void Main()
         {
-            Dictionary<int, int> dictPalinam = new Dictionary<int, int>(); 
+
+            int ReadData(string msg) // Метод читает данные от пользователя
+            {
+                System.Console.WriteLine(msg);
+                int res = int.Parse(Console.ReadLine() ?? "0");
+                return res;
+            }
 
 
+            bool PalTest(int num)   // Метод проверяет является ли число палиномом
+            {
+                bool res = false;
+                int d1 = num / 10000;
+                int d5 = num % 10;
+                int d2 = (num / 1000) % 10;
+                int d4 = (num / 10) % 10;
+                if (d1 == d5 && d2 == d4) res = true;
+                return res;
+            }
 
-            // Create a new dictionary of strings, with string keys.
-//
-Dictionary<string, string> openWith =
-    new Dictionary<string, string>();
+            Dictionary<int, int> MakeDictPal()  // Метод создает словарь 4-х значных палиномов
+            {
+                Dictionary<int, int> dictPalinam = new Dictionary<int, int>();
 
-// Add some elements to the dictionary. There are no
-// duplicate keys, but some of the values are duplicates.
-openWith.Add("txt", "notepad.exe");
-openWith.Add("bmp", "paint.exe");
-openWith.Add("dib", "paint.exe");
-openWith.Add("rtf", "wordpad.exe");
+                int j = 1;
+                for (int i = 1000; i < 10000; i++)
+                {
 
-// The Add method throws an exception if the new key is
-// already in the dictionary.
-try
-{
-    openWith.Add("txt", "winword.exe");
-}
-catch (ArgumentException)
-{
-    Console.WriteLine("An element with Key = \"txt\" already exists.");
-}
+                    int d1 = i / 1000;
+                    int d4 = i % 10;
+                    int d2 = (i / 100) % 10;
+                    int d3 = (i / 10) % 10;
 
-// The Item property is another name for the indexer, so you
-// can omit its name when accessing elements.
-Console.WriteLine("For key = \"rtf\", value = {0}.",
-    openWith["rtf"]);
+                    if (d1 == d4 && d2 == d3)
+                    {
+                        dictPalinam.Add(j, i);
+                        j++;
+                    }
+                }
+                return dictPalinam;
+            }
 
-// The indexer can be used to change the value associated
-// with a key.
-openWith["rtf"] = "winword.exe";
-Console.WriteLine("For key = \"rtf\", value = {0}.",
-    openWith["rtf"]);
+            int PalConv(int pal) // Метод преобразовывает пятизначное число в четырехзначное убирая среднюю цифру
+            {
+                int d1 = pal / 10000;
+                int d5 = pal % 10;
+                int d2 = (pal / 1000) % 10;
+                int d4 = (pal / 10) % 10;
+                int res = d1 * 1000 + d2 * 100 + d4 * 10 + d5;
+                return res;
+            }
 
-// If a key does not exist, setting the indexer for that key
-// adds a new key/value pair.
-openWith["doc"] = "winword.exe";
+            int paly = ReadData("Введите пятизначное число: ");
+            if (paly > 9999 && paly < 100000)
+            {
+                bool res = PalTest(paly);         
+                if (res) System.Console.WriteLine("Это число палином");
+                else System.Console.WriteLine("Это число не является палиномом");
+            }
+            else System.Console.WriteLine("Ошибка ввода данных");
 
-// The indexer throws an exception if the requested key is
-// not in the dictionary.
-try
-{
-    Console.WriteLine("For key = \"tif\", value = {0}.",
-        openWith["tif"]);
-}
-catch (KeyNotFoundException)
-{
-    Console.WriteLine("Key = \"tif\" is not found.");
-}
+// Второй способ
 
-// When a program often has to try keys that turn out not to
-// be in the dictionary, TryGetValue can be a more efficient
-// way to retrieve values.
-string value = "";
-if (openWith.TryGetValue("tif", out value))
-{
-    Console.WriteLine("For key = \"tif\", value = {0}.", value);
-}
-else
-{
-    Console.WriteLine("Key = \"tif\" is not found.");
-}
 
-// ContainsKey can be used to test keys before inserting
-// them.
-if (!openWith.ContainsKey("ht"))
-{
-    openWith.Add("ht", "hypertrm.exe");
-    Console.WriteLine("Value added for key = \"ht\": {0}",
-        openWith["ht"]);
-}
-
-// When you use foreach to enumerate dictionary elements,
-// the elements are retrieved as KeyValuePair objects.
-Console.WriteLine();
-foreach( KeyValuePair<string, string> kvp in openWith )
-{
-    Console.WriteLine("Key = {0}, Value = {1}",
-        kvp.Key, kvp.Value);
-}
-
-// To get the values alone, use the Values property.
-Dictionary<string, string>.ValueCollection valueColl =
-    openWith.Values;
-
-// The elements of the ValueCollection are strongly typed
-// with the type that was specified for dictionary values.
-Console.WriteLine();
-foreach( string s in valueColl )
-{
-    Console.WriteLine("Value = {0}", s);
-}
-
-// To get the keys alone, use the Keys property.
-Dictionary<string, string>.KeyCollection keyColl =
-    openWith.Keys;
-
-// The elements of the KeyCollection are strongly typed
-// with the type that was specified for dictionary keys.
-Console.WriteLine();
-foreach( string s in keyColl )
-{
-    Console.WriteLine("Key = {0}", s);
-}
-
-// Use the Remove method to remove a key/value pair.
-Console.WriteLine("\nRemove(\"doc\")");
-openWith.Remove("doc");
-
-if (!openWith.ContainsKey("doc"))
-{
-    Console.WriteLine("Key \"doc\" is not found.");
-}
-
-/* This code example produces the following output:
-
-An element with Key = "txt" already exists.
-For key = "rtf", value = wordpad.exe.
-For key = "rtf", value = winword.exe.
-Key = "tif" is not found.
-Key = "tif" is not found.
-Value added for key = "ht": hypertrm.exe
-
-Key = txt, Value = notepad.exe
-Key = bmp, Value = paint.exe
-Key = dib, Value = paint.exe
-Key = rtf, Value = winword.exe
-Key = doc, Value = winword.exe
-Key = ht, Value = hypertrm.exe
-
-Value = notepad.exe
-Value = paint.exe
-Value = paint.exe
-Value = winword.exe
-Value = winword.exe
-Value = hypertrm.exe
-
-Key = txt
-Key = bmp
-Key = dib
-Key = rtf
-Key = doc
-Key = ht
-
-Remove("doc")
-Key "doc" is not found.
-*/
-
-            Console.WriteLine("Введите номер дня недели");
-            int num = int.Parse(Console.ReadLine() ?? "0");
-
-            if (num <= 1 && num > 7) System.Console.WriteLine("Неправильный номер дня недели");
-            else Console.WriteLine("Этот день: " + dictWeek[num]);
-
+            // int paly = ReadData("Введите пятизначное число: ");
+            if (paly > 9999 && paly < 100000)
+            {
+                int palyConv = PalConv(paly);                           // 5 значное число переводится в 4 значное 
+                Dictionary<int, int> dictPalinam = MakeDictPal();       // создается словарь 4 значных палиномов
+                bool res = dictPalinam.ContainsValue(palyConv);         // проверяется есть ли в словаре
+                if (res) System.Console.WriteLine("Это число палином");
+                else System.Console.WriteLine("Это число не является палиномом");
+            }
+            else System.Console.WriteLine("Ошибка ввода данных");
 
         }
     }

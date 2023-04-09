@@ -28,14 +28,14 @@ namespace project
                     Console.WriteLine("В числе больше 10 знаков");
                 }
                 else
-                {
-                    int[] arrayInput = new int[inLeng];                   // массив куда будет разложено число равный числу цифр
+                {int[] arrayInput = new int[inLeng];                   // массив куда будет разложено число равный числу цифр
                     for (int count = 0; count < inLeng; count++)
                     {
                         arrayInput[count] = int.Parse(input[count].ToString()); // число переводится в массив
                     }
 
                     Console.WriteLine(arrayInput[2]);
+                    
 
                 }
             }
