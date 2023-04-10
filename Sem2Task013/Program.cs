@@ -29,7 +29,7 @@ namespace project
                 }
                 else
                 {int[] arrayInput = new int[inLeng];                   // массив куда будет разложено число равный числу цифр
-                    for (int count = 0; count < inLeng; count++)
+                    for (int count = 0; count < inLeng-1; count++)
                     {
                         arrayInput[count] = int.Parse(input[count].ToString()); // число переводится в массив
                     }
