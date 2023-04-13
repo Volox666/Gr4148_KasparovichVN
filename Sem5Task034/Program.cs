@@ -50,77 +50,91 @@ namespace project
                 int res = 0;
                 for (int i = 0; i < arr.Length; i++)
                 {
-                    if(arr[i]%2==0) res++;
+                    if (arr[i] % 2 == 0) res++;
                 }
                 return res;
             }
 
             int lenArr = ReadData("Введите размер массива");
-            int[] res = Gen1DArr(lenArr, 15, 0);
+            int[] res = Gen1DArr(lenArr, 1000, 100);
             Print1DArr(res);
             int countElem = EvenCount(res);
             System.Console.WriteLine("Количество четных элементов в массиве: " + countElem);
-            
-            
-            /* Сортировка методом пузырька
-		void BubbleSort(int[] array)
-		{
-			for (int i = 0; i < array.Length; i++)
-				for (int j = 0; j < array.Length - 1; j++)
-					if (array[j] > array[j + 1])
-					{
-						int t = array[j + 1];
-						array[j + 1] = array[j];
-						array[j] = t;
-					}
-		}
- 
-            
-            */
-            
-            /* Сортировка методом подсчета
-            
-            
- void CountingSort(int[] arr)
-        {
 
-            int max = arr.Max();
-            int min = arr.Min();
+            // Сортировка методом пузырька
 
-            int[] count = new int[max - min + 1];
-            int z = 0;
-
-            for (int i = 0; i &lt; count.Length; i++)
+            int[] BubbleSort(int[] array)
             {
-                count[i] = 0;
-            }
-            for (int i = 0; i &lt; arr.Length; i++)
-            {
-                count[arr[i] - min]++;
+                for (int i = 0; i < array.Length; i++)
+                    for (int j = 0; j < array.Length - 1; j++)
+                        if (array[j] > array[j + 1])
+                        {
+                            int t = array[j + 1];
+                            array[j + 1] = array[j];
+                            array[j] = t;
+                        }
+                return array;
             }
 
-            for (int i = min; i &lt;= max; i++)
+            // Сортировка методом подсчета
+
+            int[] CountSort(int[] array)
             {
-                while (count[i - min]-- > 0)
+                int length = array.Length;
+
+                //Create a new "output" array
+                int[] output = new int[length];
+
+                //Create a new "counting" array 
+                //which stores the count of each unique number
+                int[] count = new int[1000];
+                for (int i = 0; i < 1000; ++i)
                 {
-                    arr[z] = i;
-                    z++;
+                    count[i] = 0;
                 }
+                for (int i = 0; i < length; ++i)
+                {
+                    ++count[array[i]];
+                }
+
+                //Change count[i] so that count[i] now contains the   
+                //actual position of this character in the output array.
+                for (int i = 1; i <= 999; ++i)
+                {
+                    count[i] += count[i - 1];
+                }
+
+                //Build the output array.
+                //To make this sorting algorithm stable, 
+                //we are operating in reverse order. 
+                for (int i = length - 1; i >= 0; i--)
+                {
+                    output[count[array[i]] - 1] = array[i];
+                    --count[array[i]];
+                }
+
+                //Copy the output array to the final array.
+                for (int i = 0; i < length; ++i)
+                {
+                    array[i] = output[i];
+                }
+                return array;
             }
 
-            foreach (var x in arr)
-            {
-                Console.Write(x + " ");
-            }
-        }
-        
-        */
-		/*
-		DateTime d1 = DateTime.Now;     //Проверка на скорость выполнения
-            long res1 = SumSimple(numberA);
-            System.Console.WriteLine(DateTime.Now - d1);
-	    */
-            
+            int lenArrSort = ReadData("Введите размер массива для сортировки");
+            int[] resSort = Gen1DArr(lenArr, 1000,100);
+
+            DateTime d1 = DateTime.Now;
+            int[] resSortBuble = BubbleSort(resSort);
+            //Print1DArr(resSortBuble);
+            System.Console.WriteLine("Сортировка методом пузырька {0}",DateTime.Now - d1);
+
+            DateTime d2 = DateTime.Now;
+            int[] resSortCount = CountSort(resSort);
+            //Print1DArr(resSortCount);
+            System.Console.WriteLine("Сортировка методом подсчета {0}",DateTime.Now - d2);
+           
+
         }
     }
 }
