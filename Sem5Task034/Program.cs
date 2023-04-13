@@ -115,6 +115,11 @@ namespace project
         }
         
         */
+		/*
+		DateTime d1 = DateTime.Now;     //Проверка на скорость выполнения
+            long res1 = SumSimple(numberA);
+            System.Console.WriteLine(DateTime.Now - d1);
+	    */
             
         }
     }
