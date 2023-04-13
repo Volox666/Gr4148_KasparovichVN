@@ -44,6 +44,10 @@ namespace project
                 {
                     int var = new Random().Next(minValue, maxValue + 1); // случайное число из диапазона
                     arr[i] = new Random().NextDouble() * var; // вещественный множитель от (0 до 1) на случайное число
+                    /* Второй вариант
+                    arr[i] = new Random().Next(min, max +1)+new Random().NextDouble();
+                    генерируется случайное число и к нему прибавляется случайная дробная часть*/
+
                 }
                 return arr;
             }
@@ -117,7 +121,7 @@ namespace project
             int[] arrayIns = InsertionSort(arrayInt);
             System.Console.WriteLine("Сортирвка методом вставки");
             Print1DArrInt(arrayIns);
-            int difElem = arrayIns[0] - arrayIns[arrayIns.Length-1];
+            int difElem = arrayIns[0] - arrayIns[arrayIns.Length - 1];
             Console.WriteLine("Разница между первым и последним эллементом: " + Math.Abs(difElem));
 
 
