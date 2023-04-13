@@ -61,7 +61,60 @@ namespace project
             int countElem = EvenCount(res);
             System.Console.WriteLine("Количество четных элементов в массиве: " + countElem);
             
+            
+            /* Сортировка методом пузырька
+		void BubbleSort(int[] array)
+		{
+			for (int i = 0; i < array.Length; i++)
+				for (int j = 0; j < array.Length - 1; j++)
+					if (array[j] > array[j + 1])
+					{
+						int t = array[j + 1];
+						array[j + 1] = array[j];
+						array[j] = t;
+					}
+		}
+ 
+            
+            */
+            
+            /* Сортировка методом подсчета
+            
+            
+ void CountingSort(int[] arr)
+        {
 
+            int max = arr.Max();
+            int min = arr.Min();
+
+            int[] count = new int[max - min + 1];
+            int z = 0;
+
+            for (int i = 0; i &lt; count.Length; i++)
+            {
+                count[i] = 0;
+            }
+            for (int i = 0; i &lt; arr.Length; i++)
+            {
+                count[arr[i] - min]++;
+            }
+
+            for (int i = min; i &lt;= max; i++)
+            {
+                while (count[i - min]-- > 0)
+                {
+                    arr[z] = i;
+                    z++;
+                }
+            }
+
+            foreach (var x in arr)
+            {
+                Console.Write(x + " ");
+            }
+        }
+        
+        */
             
         }
     }
