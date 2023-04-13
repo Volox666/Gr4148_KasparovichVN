@@ -106,36 +106,19 @@ namespace project
                 return mass;
             }
 
-            // int[] SortArray(int[] inputArray)
-            // {
-            //     int[] countArray = new int[inputArray.Max() + 1];
-            //     for (int i = 0; i < inputArray.Length; i++)
-            //     {
-            //         countArray[inputArray[i]]++;
-            //     }
-            //     int[] sortedArray = new int[inputArray.Length];
-            //     int sortedArrayIndex = 0;
-            //     for (int i = countArray.Length - 1; i >= 0; i--)
-            //     {
-            //         for (int j = 0; j < countArray[i]; j++)
-            //         {
-            //             sortedArray[sortedArrayIndex++] = i;
-            //         }
-            //     }
-            //     return sortedArray;
-
-
                 int lenArr = ReadData("Введите размер массива");
                 double[] res = Gen1DArrDouble(lenArr, 15, 0);
                 Print1DArr(res);
                 double dif = DifMinMax(res);
                 System.Console.WriteLine("Разница между максимальным и минимальным элементами массива: " + dif);
-
+// Для задачи со звездочкой
                 int[] arrayInt = Gen1DArr(lenArr, 15, 0);
                 Print1DArrInt(arrayInt);
                 int[] arrayIns = InsertionSort(arrayInt);
                 System.Console.WriteLine("Сортирвка методом вставки");
                 Print1DArrInt(arrayIns);
+            int dif = arrayIns[0]-arrayIns[arrayIns.Length];
+            Console.WriteLine("Разница между первым и последним эллементом: " + Math.Abs(dif));
 
 
 
